@@ -12,7 +12,7 @@ import FWCore.ParameterSet.Config as cms
 from PhysicsTools.PatAlgos.tools.coreTools import *
 from PhysicsTools.PatAlgos.tools.pfTools import *
 
-from eventCounting import *
+from UserCode.TTHPAT.eventCounting import *
 
 from PhysicsTools.PatAlgos.selectionLayer1.jetSelector_cfi import *
 
@@ -144,7 +144,7 @@ process.goodOfflinePrimaryVertices = cms.EDFilter(
 , src = cms.InputTag('offlinePrimaryVertices')
 )
 
-from EventFilters_cff import ApplyEventFilters
+from UserCode.TTHPAT.EventFilters_cff import ApplyEventFilters
 ApplyEventFilters(process, runOnFastSim=options.runOnFastSim)
 #-------------------------------------------------
 # Muons
