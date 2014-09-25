@@ -715,7 +715,11 @@ process.out.outputCommands = cms.untracked.vstring([
     'keep recoGenJets_selectedPatJets_genJets_*', #For Jet MC smearing we need to keep the genJets
     "keep *_puJetId_*_*", # input variables
     "keep *_puJetMva_*_*", # final MVAs and working point flags
-    'keep *_jetClones__*',
+    "keep *_jetClones__*",
+
+    # Taus
+    "keep patTaus_*__*",
+    "keep recoPFTauDiscriminator_*__*",
 
     # Muons
     'keep *_muons__*', #reco muons
@@ -761,7 +765,7 @@ process.out.outputCommands = cms.untracked.vstring([
 
     #drop unneeded jets
     'drop patJets_patJets__*',
-    'drop patJets_selectedPatJets__*',
+    'drop patJets_selectedPatJets__*', #instead use patJetsWithOwnRef
     'drop patJets_patJetsWithOwnRefNotOverlappingWithLeptonsForMEtUncertainty__*',
     'drop patJets_shiftedPatJetsWithOwnRefEnDownForCorrMEt__*',
     'drop patJets_shiftedPatJetsWithOwnRefEnUpForCorrMEt__*',
